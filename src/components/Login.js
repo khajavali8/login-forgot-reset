@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import API from '../api';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -20,6 +21,7 @@ const Login = () => {
   };
 
   return (
+    <div>
     <form onSubmit={handleSubmit}>
       <input
         type="email"
@@ -37,6 +39,8 @@ const Login = () => {
       />
       <button type="submit">Login</button>
     </form>
+    <p>ForgotPassword?<Link to="/forgot-password">Forgot Password</Link></p>
+    </div>
   );
 };
 
